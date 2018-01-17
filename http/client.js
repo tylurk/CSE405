@@ -1,7 +1,5 @@
-const http = require('http')
-const hostname = 'localhost';
-const port = 8000;
-
-server.listen(port, hostname () => {
-  console.log('connected to server running at http://localhost:8000/');
+const net = require('net');
+const client = new net.Socket();
+client.connect(8000, (), function() {
+  console.log('Connected');
 });
