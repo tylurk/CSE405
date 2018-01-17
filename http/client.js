@@ -14,5 +14,5 @@ socket.on('connect', () => {
 });
 
 socket.on('data', (chunk) => {
-  console.log(chunk.toString('data event occured'));
+  console.log(chunk.toString('utf8'));
 });
