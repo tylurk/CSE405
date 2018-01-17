@@ -1,5 +1,6 @@
 const net = require('net');
-const client = new net.Socket();
-client.connect(8000, (), function() {
-  console.log('Connected');
+
+const socket = net.createConnection({
+  host: 'localhost',
+  port: 8000
 });
