@@ -1,18 +1,18 @@
 const http     = require('http');
 const sessions = require('./sessions');
-const qs 	   = require('querystring'); 
-const st 	   = require('st');
-const fs 	   = require('fs');
+const qs       = require('querystring'); 
+const st       = require('st');
+const fs       = require('fs');
 
 const mount = st({
 	path: 'public/'
 });
 
-const homeTemplate 	= fs.readFileSync('views/home.html', 'utf8');
+const homeTemplate  = fs.readFileSync('views/home.html', 'utf8');
 const colorTemplate = fs.readFileSync('views/color.html', 'utf8');
 const loginTemplate = fs.readFileSync('public/login.html', 'utf8');
 const ErrorTemplate = fs.readFileSync('public/error.html', 'utf8');
-const server 		= http.createServer();
+const server 	    = http.createServer();
 
 server.listen(8000);
 
@@ -189,6 +189,6 @@ function loginPage(res){
 
 function errorPage(res){
 	res.statusCode = 301;
- 	res.writeHead(301, {'Location': '/loginError.html'})
+ 	res.writeHead(301, {'Location': '/error.html'})
   	res.end();
 }
